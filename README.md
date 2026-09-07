@@ -5,78 +5,77 @@
 
 <p align="center"><img src="https://wifiphisher.github.io/wifiphisher/wifiphisher.png" /></p>
 
-## About
-<a href="https://wifiphisher.org">Wifiphisher</a> is a rogue Access Point framework for conducting red team engagements or Wi-Fi security testing. Using Wifiphisher, penetration testers can easily achieve a man-in-the-middle position against wireless clients by performing targeted Wi-Fi association attacks. Wifiphisher can be further used to mount victim-customized web phishing attacks against the connected clients in order to capture credentials (e.g. from third party login pages or WPA/WPA2 Pre-Shared Keys) or infect the victim stations with malwares.
+## Giới thiệu
+<a href="https://wifiphisher.org">Wifiphisher</a> là một framework Access Point giả mạo (rogue) dùng để tiến hành các cuộc diễn tập red team hoặc kiểm thử bảo mật Wi-Fi. Sử dụng Wifiphisher, các pentester có thể dễ dàng đạt được vị trí man-in-the-middle đối với các client không dây bằng cách thực hiện các cuộc tấn công liên kết Wi-Fi có chủ đích. Wifiphisher còn có thể được dùng để dàn dựng các cuộc tấn công phishing web tùy chỉnh theo nạn nhân nhắm vào các client đã kết nối, nhằm đánh cắp thông tin đăng nhập (ví dụ từ các trang đăng nhập của bên thứ ba hoặc khóa chia sẻ trước WPA/WPA2) hoặc lây nhiễm malware vào các máy trạm nạn nhân.
 
-Wifiphisher is...
+Wifiphisher là...
 
-* ...powerful. Wifiphisher can run for hours inside a Raspberry Pi device
-executing all modern Wi-Fi association techniques (including "Evil Twin", "KARMA" and "Known Beacons").  
+* ...mạnh mẽ. Wifiphisher có thể chạy hàng giờ liền bên trong một thiết bị Raspberry Pi
+thực thi tất cả các kỹ thuật liên kết Wi-Fi hiện đại (bao gồm "Evil Twin", "KARMA" và "Known Beacons").
 
-* ...flexible. Supports dozens of arguments and comes with a set of
-community-driven phishing templates for different deployment scenarios.  
+* ...linh hoạt. Hỗ trợ hàng chục tham số và đi kèm với một bộ
+template phishing do cộng đồng đóng góp cho các kịch bản triển khai khác nhau.
 
-* ...modular. Users can <a href="http://wifiphisher.readthedocs.io/en/latest/extensions.html">write simple or complicated modules</a> in Python to expand the functionality of the tool or <a href="http://wifiphisher.readthedocs.io/en/latest/custom_phishing_scenario.html">create custom phishing scenarios</a> in order to conduct specific target-oriented attacks. 
+* ...theo module. Người dùng có thể <a href="http://wifiphisher.readthedocs.io/en/latest/extensions.html">viết các module đơn giản hoặc phức tạp</a> bằng Python để mở rộng chức năng của công cụ hoặc <a href="http://wifiphisher.readthedocs.io/en/latest/custom_phishing_scenario.html">tạo các kịch bản phishing tùy chỉnh</a> nhằm tiến hành các cuộc tấn công nhắm mục tiêu cụ thể.
 
-* ...easy to use. Advanced users can utilize the rich set of features that Wifiphisher offers but beginners may start out as simply as "./bin/wifiphisher". The interactive Textual User Interface guides the tester through the build process of the attack. 
+* ...dễ sử dụng. Người dùng nâng cao có thể tận dụng bộ tính năng phong phú mà Wifiphisher cung cấp, nhưng người mới bắt đầu có thể chỉ cần chạy đơn giản "./bin/wifiphisher". Giao diện người dùng dạng văn bản tương tác sẽ hướng dẫn người kiểm thử qua quy trình xây dựng cuộc tấn công.
 
-* ...the result of an extensive research. Attacks like "Known Beacons" and "Lure10" as well as state-of-the-art phishing techniques, were disclosed by our developers, and Wifiphisher was the first tool to incorporate them. 
+* ...là kết quả của một nghiên cứu chuyên sâu. Các cuộc tấn công như "Known Beacons" và "Lure10" cũng như các kỹ thuật phishing tân tiến nhất, đã được các nhà phát triển của chúng tôi công bố, và Wifiphisher là công cụ đầu tiên tích hợp chúng.
 
-* ...supported by an awesome community of developers and users.
+* ...được hỗ trợ bởi một cộng đồng tuyệt vời gồm các nhà phát triển và người dùng.
 
-* ...free. Wifiphisher is available for free download, and also comes with full
-source code that you may study, change, or distribute under the terms of the 
-GPLv3 license.
+* ...miễn phí. Wifiphisher có thể tải xuống miễn phí, và cũng đi kèm với đầy đủ
+mã nguồn mà bạn có thể nghiên cứu, thay đổi, hoặc phân phối theo các điều khoản của
+giấy phép GPLv3.
 
-## How it works
+## Cách hoạt động
 
-Wi-Fi phishing consists of two steps:
+Wi-Fi phishing bao gồm hai bước:
 
-1. The first step involves the process of associating with Wi-Fi clients
-unknowingly, or in other words, obtaining a man-in-the-middle (MITM) position. Wifiphisher uses a number of different techniques to achieve this including:
-    * Evil Twin, where Wifiphisher creates a fake wireless network that looks similar to a legitimate network.
-    * KARMA, where Wifiphisher masquerades as a public network searched for by nearby Wi-Fi clients.
-    * Known Beacons, where Wifiphisher broadcasts a dictionary of common ESSIDs, that the around wireless stations have likely connected to in the past.
+1. Bước đầu tiên liên quan đến quá trình liên kết với các client Wi-Fi
+mà họ không hề hay biết, hay nói cách khác, đạt được vị trí man-in-the-middle (MITM). Wifiphisher sử dụng một số kỹ thuật khác nhau để đạt được điều này, bao gồm:
+    * Evil Twin, trong đó Wifiphisher tạo ra một mạng không dây giả trông giống với một mạng hợp pháp.
+    * KARMA, trong đó Wifiphisher giả dạng thành một mạng công cộng mà các client Wi-Fi lân cận đang tìm kiếm.
+    * Known Beacons, trong đó Wifiphisher phát sóng một từ điển các ESSID phổ biến, mà các máy trạm không dây xung quanh có khả năng đã từng kết nối trước đây.
 
-    At the same time, Wifiphisher keeps forging “Deauthenticate” or “Disassociate” packets to disrupt existing associations and eventually lure victims using the above techniques.
+    Đồng thời, Wifiphisher liên tục giả mạo các gói tin "Deauthenticate" hoặc "Disassociate" để phá vỡ các liên kết hiện có và cuối cùng dụ dỗ nạn nhân bằng các kỹ thuật nêu trên.
 
-<p align="center"><img width="70%" src="https://wifiphisher.github.io/wifiphisher/diagram.jpg" /><br /><i>Performing MiTM attack</i></p>
+<p align="center"><img width="70%" src="https://wifiphisher.github.io/wifiphisher/diagram.jpg" /><br /><i>Thực hiện cuộc tấn công MiTM</i></p>
 
-2. (Optionally) There are a number of different attacks that can be carried out 
-once Wifiphisher grants the penetration tester with a man-in-the-middle
-position. For example, the tester may perform data sniffing or scan the victim stations for vulnerabilities. 
+2. (Tùy chọn) Có một số cuộc tấn công khác nhau có thể được thực hiện
+một khi Wifiphisher mang lại cho pentester vị trí man-in-the-middle. Ví dụ, người kiểm thử có thể thực hiện dò tìm dữ liệu (sniffing) hoặc quét các máy trạm nạn nhân để tìm lỗ hổng.
 
-    Using Wifiphisher, advanced web phishing techniques are possible by gathering
-information from the target environment and victim user. For example, in one of
-our scenarios, Wifiphisher will extract information from the broadcasted beacon
-frames and the HTTP User-Agent header to display a web-based imitation of
-Windows network manager in order to capture the Pre-Shared Key.
+    Sử dụng Wifiphisher, các kỹ thuật phishing web nâng cao trở nên khả thi bằng cách thu thập
+thông tin từ môi trường mục tiêu và người dùng nạn nhân. Ví dụ, trong một trong
+các kịch bản của chúng tôi, Wifiphisher sẽ trích xuất thông tin từ các khung beacon
+được phát sóng và header User-Agent của HTTP để hiển thị một bản mô phỏng dựa trên web
+của trình quản lý mạng Windows nhằm đánh cắp Khóa chia sẻ trước (PSK).
 
-<p align="center"><img src="https://wifiphisher.github.io/wifiphisher/ss-webphishing.png" /><br /><i>Fake <a href="https://wifiphisher.org/ps/wifi_connect/">web-based network manager</a></i></p>
+<p align="center"><img src="https://wifiphisher.github.io/wifiphisher/ss-webphishing.png" /><br /><i>Giả mạo <a href="https://wifiphisher.org/ps/wifi_connect/">trình quản lý mạng dựa trên web</a></i></p>
 
-## Requirements
-Following are the requirements for getting the most out of Wifiphisher:
+## Yêu cầu
+Sau đây là các yêu cầu để tận dụng tối đa Wifiphisher:
 
-  - A working Linux system. People have made Wifiphisher work on many distros, but Kali Linux is the officially supported distribution, thus all new features are primarily tested on this platform.
-  - One wireless network adapter that supports AP & Monitor mode and is capable of injection. Drivers should support netlink.
+  - Một hệ thống Linux hoạt động tốt. Nhiều người đã làm cho Wifiphisher hoạt động trên nhiều bản phân phối, nhưng Kali Linux là bản phân phối được hỗ trợ chính thức, do đó tất cả các tính năng mới đều được kiểm thử chủ yếu trên nền tảng này.
+  - Một adapter mạng không dây hỗ trợ chế độ AP & Monitor và có khả năng injection. Driver phải hỗ trợ netlink.
 
-## Installation
+## Cài đặt
 
-To install the latest development version type the following commands:
+Để cài đặt phiên bản phát triển mới nhất, hãy nhập các lệnh sau:
 
 ```bash
-git clone https://github.com/wifiphisher/wifiphisher.git # Download the latest revision
-cd wifiphisher # Switch to tool's directory
-sudo python setup.py install # Install any dependencies
+git clone https://github.com/wifiphisher/wifiphisher.git # Tải xuống bản sửa đổi mới nhất
+cd wifiphisher # Chuyển sang thư mục của công cụ
+sudo python setup.py install # Cài đặt các dependency cần thiết
 ```
 
-Alternatively, you can download the latest stable version from the <a href="https://github.com/wifiphisher/wifiphisher/releases">Releases page</a>.
+Ngoài ra, bạn có thể tải xuống phiên bản ổn định mới nhất từ <a href="https://github.com/wifiphisher/wifiphisher/releases">trang Releases</a>.
 
-## Usage
+## Cách sử dụng
 
-Run the tool by typing `wifiphisher` or `python bin/wifiphisher` (from inside the tool's directory).
+Chạy công cụ bằng cách gõ `wifiphisher` hoặc `python bin/wifiphisher` (từ bên trong thư mục của công cụ).
 
-By running the tool without any options, it will find the right interfaces and interactively ask the user to pick the ESSID of the target network (out of a list with all the ESSIDs in the around area) as well as a phishing scenario to perform. By default, the tool will perform both Evil Twin and KARMA attacks.
+Khi chạy công cụ mà không có bất kỳ tùy chọn nào, nó sẽ tìm ra các interface phù hợp và hỏi người dùng một cách tương tác để chọn ESSID của mạng mục tiêu (từ một danh sách gồm tất cả các ESSID trong khu vực xung quanh) cũng như một kịch bản phishing để thực hiện. Theo mặc định, công cụ sẽ thực hiện cả tấn công Evil Twin và KARMA.
 
 ***
 
@@ -84,9 +83,9 @@ By running the tool without any options, it will find the right interfaces and i
 wifiphisher -aI wlan0 -jI wlan4 -p firmware-upgrade --handshake-capture handshake.pcap
 ```
 
-Use wlan0 for spawning the rogue Access Point and wlan4 for DoS attacks. Select the target network manually from the list and perform the "Firmware Upgrade" scenario. Verify that the captured Pre-Shared Key is correct by checking it against the handshake in the handshake.pcap file.
+Sử dụng wlan0 để tạo Access Point giả mạo và wlan4 cho các cuộc tấn công DoS. Chọn mạng mục tiêu thủ công từ danh sách và thực hiện kịch bản "Firmware Upgrade". Xác minh rằng Khóa chia sẻ trước đã bắt được là chính xác bằng cách đối chiếu với handshake trong file handshake.pcap.
 
-Useful for manually selecting the wireless adapters. The <a href="https://wifiphisher.org/ps/firmware-upgrade/">"Firmware Upgrade"</a> scenario is an easy way for obtaining the PSK from a password-protected network.
+Hữu ích để chọn thủ công các adapter không dây. Kịch bản <a href="https://wifiphisher.org/ps/firmware-upgrade/">"Firmware Upgrade"</a> là một cách dễ dàng để lấy được PSK từ một mạng được bảo vệ bằng mật khẩu.
 
 ***
 
@@ -94,9 +93,9 @@ Useful for manually selecting the wireless adapters. The <a href="https://wifiph
 wifiphisher --essid CONFERENCE_WIFI -p plugin_update -pK s3cr3tp4ssw0rd
 ```
 
-Automatically pick the right interfaces. Target the Wi-Fi with ESSID "CONFERENCE_WIFI" and perform the "Plugin Update" scenario. The Evil Twin will be password-protected with PSK "s3cr3tp4ssw0rd".
+Tự động chọn các interface phù hợp. Nhắm mục tiêu vào Wi-Fi có ESSID "CONFERENCE_WIFI" và thực hiện kịch bản "Plugin Update". Evil Twin sẽ được bảo vệ bằng mật khẩu với PSK "s3cr3tp4ssw0rd".
 
-Useful against networks with disclosed PSKs (e.g. in conferences). The <a href="https://wifiphisher.org/ps/plugin_update/">"Plugin Update"</a> scenario provides an easy way for getting the victims to download malicious executables (e.g. malwares containing a reverse shell payload).
+Hữu ích đối với các mạng có PSK đã bị lộ (ví dụ tại các hội nghị). Kịch bản <a href="https://wifiphisher.org/ps/plugin_update/">"Plugin Update"</a> cung cấp một cách dễ dàng để khiến nạn nhân tải xuống các file thực thi độc hại (ví dụ malware chứa payload reverse shell).
 
 ***
 
@@ -104,78 +103,77 @@ Useful against networks with disclosed PSKs (e.g. in conferences). The <a href="
 wifiphisher --essid "FREE WI-FI" -p oauth-login -kB
 ```
 
-Simply spawn an open Wi-Fi network with ESSID "FREE WI-FI" and perform the "OAuth Login" scenario. Furthermore, mount the "Known Beacons" Wi-Fi automatic association technique.
+Chỉ cần tạo ra một mạng Wi-Fi mở với ESSID "FREE WI-FI" và thực hiện kịch bản "OAuth Login". Hơn nữa, triển khai kỹ thuật liên kết tự động Wi-Fi "Known Beacons".
 
-Useful against victims in public areas. The <a href="https://wifiphisher.org/ps/oauth-login/">"OAuth Login"</a> scenario provides a simple way for capturing credentials from social networks, like Facebook. 
+Hữu ích đối với nạn nhân tại các khu vực công cộng. Kịch bản <a href="https://wifiphisher.org/ps/oauth-login/">"OAuth Login"</a> cung cấp một cách đơn giản để đánh cắp thông tin đăng nhập từ các mạng xã hội, như Facebook.
 
+Sau đây là tất cả các tùy chọn cùng với mô tả của chúng (cũng có sẵn với `wifiphisher -h`):
 
-Following are all the options along with their descriptions (also available with `wifiphisher -h`):
-
-| Short form | Long form | Explanation |
+| Dạng ngắn | Dạng đầy đủ | Giải thích |
 | :----------: | :---------: | :-----------: |
-|-h | --help| show this help message and exit |
-|-i INTERFACE| --interface INTERFACE| Manually choose an interface that supports both AP and monitor modes for spawning the rogue AP as well as mounting additional Wi-Fi attacks from Extensions (i.e. deauth). Example: -i wlan1 |
-|-eI EXTENSIONSINTERFACE| --extensionsinterface EXTENSIONSINTERFACE|	Manually choose an interface that supports monitor mode for running the extensions. Example: -eI wlan1|
-|-aI APINTERFACE| --apinterface APINTERFACE|	Manually choose an interface that supports AP mode for spawning an AP. Example: -aI wlan0|
-|-pI INTERFACE| --protectinterface INTERFACE| Specify one or more interfaces that will have their connection protected from being managed by NetworkManager.|
-|-kN| --keepnetworkmanager| Do not kill NetworkManager.|
-|-nE| --noextensions|	Do not load any extensions.|
-|-e ESSID| --essid ESSID|	Enter the ESSID of the rogue Access Point. This option will skip Access Point selection phase. Example: --essid 'Free WiFi'|
-|-pPD PHISHING_PAGES_DIRECTORY|--phishing-pages-directory PHISHING_PAGES_DIRECTORY| Search for phishing pages in this location|
-|-p PHISHINGSCENARIO| --phishingscenario PHISHINGSCENARIO	|Choose the phishing scenario to run.This option will skip the scenario selection phase. Example: -p firmware_upgrade|
-|-pK PRESHAREDKEY| --presharedkey PRESHAREDKEY|	Add WPA/WPA2 protection on the rogue Access Point. Example: -pK s3cr3tp4ssw0rd|
-|-qS| --quitonsuccess|	Stop the script after successfully retrieving one pair of credentials.|
-|-lC| --lure10-capture| Capture the BSSIDs of the APs that are discovered during AP selection phase. This option is part of Lure10 attack.
-|-lE LURE10_EXPLOIT |--lure10-exploit LURE10_EXPLOIT| Fool the Windows Location Service of nearby Windows users to believe it is within an area that was previously captured with --lure10-capture. Part of the Lure10 attack.|
-|-iAM| --mac-ap-interface| Specify the MAC address of the AP interface. Example: -iAM 38:EC:11:00:00:00|
-|-iEM| --mac-extensions-interface| Specify the MAC address of the extensions interface. Example: -iEM E8:2A:EA:00:00:00|
-|-iNM| --no-mac-randomization| Do not change any MAC address.|
-|-hC|--handshake-capture|Capture of the WPA/WPA2 handshakes for verifying passphrase. Requires cowpatty. Example: -hC capture.pcap|
-|-dE ESSID|--deauth-essid ESSID|Deauth all the BSSIDs in the WLAN with that ESSID.|
-|-dC CHANNELS| --deauth-channels CHANNELS|Channels to deauth. Example: --deauth-channels 1,3,7|
-||--logging| Enable logging. Output will be saved to wifiphisher.log file.|
-|-lP LOGPATH| --logpath LOGPATH| Determine the full path of the logfile.|
-|-cP CREDENTIAL_LOG_PATH|--credential-log-path CREDENTIAL_LOG_PATH|Determine the full path of the file that will store any captured credentials|
-|-cM|--channel-monitor|Monitor if the target access point changes the channel.|
-||--payload-path| Enable the payload path. Intended for use with scenarios that serve payloads.|
-|-wP|--wps-pbc|Monitor if the button on a WPS-PBC Registrar side is pressed.|
-|-wAI|--wpspbc-assoc-interface|The WLAN interface used for associating to the WPS AccessPoint.|
-|-kB|--known-beacons|Perform the known beacons Wi-Fi automatic association technique.|
-|-fH|--force-hostapd|Force the usage of hostapd installed in the system.|
-||--dnsmasq-conf DNSMASQ_CONF|Determine the full path of dnmasq.conf file.|
-|-dK|--disable-karma|Disables KARMA attack.|
-|-pE|--phishing-essid|Determine the ESSID you want to use for the phishing page.|
+|-h | --help| hiển thị thông báo trợ giúp này và thoát |
+|-i INTERFACE| --interface INTERFACE| Chọn thủ công một interface hỗ trợ cả chế độ AP và monitor để tạo AP giả mạo cũng như triển khai các cuộc tấn công Wi-Fi bổ sung từ Extensions (ví dụ: deauth). Ví dụ: -i wlan1 |
+|-eI EXTENSIONSINTERFACE| --extensionsinterface EXTENSIONSINTERFACE| Chọn thủ công một interface hỗ trợ chế độ monitor để chạy các extension. Ví dụ: -eI wlan1|
+|-aI APINTERFACE| --apinterface APINTERFACE| Chọn thủ công một interface hỗ trợ chế độ AP để tạo một AP. Ví dụ: -aI wlan0|
+|-pI INTERFACE| --protectinterface INTERFACE| Chỉ định một hoặc nhiều interface sẽ được bảo vệ kết nối khỏi bị NetworkManager quản lý.|
+|-kN| --keepnetworkmanager| Không tắt NetworkManager.|
+|-nE| --noextensions| Không tải bất kỳ extension nào.|
+|-e ESSID| --essid ESSID| Nhập ESSID của Access Point giả mạo. Tùy chọn này sẽ bỏ qua giai đoạn chọn Access Point. Ví dụ: --essid 'Free WiFi'|
+|-pPD PHISHING_PAGES_DIRECTORY|--phishing-pages-directory PHISHING_PAGES_DIRECTORY| Tìm kiếm các trang phishing tại vị trí này|
+|-p PHISHINGSCENARIO| --phishingscenario PHISHINGSCENARIO |Chọn kịch bản phishing để chạy. Tùy chọn này sẽ bỏ qua giai đoạn chọn kịch bản. Ví dụ: -p firmware_upgrade|
+|-pK PRESHAREDKEY| --presharedkey PRESHAREDKEY| Thêm bảo vệ WPA/WPA2 cho Access Point giả mạo. Ví dụ: -pK s3cr3tp4ssw0rd|
+|-qS| --quitonsuccess| Dừng script sau khi lấy được thành công một cặp thông tin đăng nhập.|
+|-lC| --lure10-capture| Bắt các BSSID của các AP được phát hiện trong giai đoạn chọn AP. Tùy chọn này là một phần của cuộc tấn công Lure10.
+|-lE LURE10_EXPLOIT |--lure10-exploit LURE10_EXPLOIT| Đánh lừa Windows Location Service của người dùng Windows lân cận để tin rằng nó đang ở trong một khu vực đã được bắt trước đó bằng --lure10-capture. Là một phần của cuộc tấn công Lure10.|
+|-iAM| --mac-ap-interface| Chỉ định địa chỉ MAC của interface AP. Ví dụ: -iAM 38:EC:11:00:00:00|
+|-iEM| --mac-extensions-interface| Chỉ định địa chỉ MAC của interface extensions. Ví dụ: -iEM E8:2A:EA:00:00:00|
+|-iNM| --no-mac-randomization| Không thay đổi bất kỳ địa chỉ MAC nào.|
+|-hC|--handshake-capture|Bắt các handshake WPA/WPA2 để xác minh mật khẩu. Yêu cầu cowpatty. Ví dụ: -hC capture.pcap|
+|-dE ESSID|--deauth-essid ESSID|Deauth tất cả các BSSID trong WLAN có ESSID đó.|
+|-dC CHANNELS| --deauth-channels CHANNELS|Các kênh để deauth. Ví dụ: --deauth-channels 1,3,7|
+||--logging| Bật ghi log. Đầu ra sẽ được lưu vào file wifiphisher.log.|
+|-lP LOGPATH| --logpath LOGPATH| Xác định đường dẫn đầy đủ của file log.|
+|-cP CREDENTIAL_LOG_PATH|--credential-log-path CREDENTIAL_LOG_PATH|Xác định đường dẫn đầy đủ của file sẽ lưu trữ bất kỳ thông tin đăng nhập nào bắt được|
+|-cM|--channel-monitor|Giám sát xem access point mục tiêu có thay đổi kênh hay không.|
+||--payload-path| Bật đường dẫn payload. Dùng cho các kịch bản phục vụ payload.|
+|-wP|--wps-pbc|Giám sát xem nút trên phía WPS-PBC Registrar có được nhấn hay không.|
+|-wAI|--wpspbc-assoc-interface|Interface WLAN được dùng để liên kết với Access Point WPS.|
+|-kB|--known-beacons|Thực hiện kỹ thuật liên kết tự động Wi-Fi known beacons.|
+|-fH|--force-hostapd|Buộc sử dụng hostapd đã được cài đặt trên hệ thống.|
+||--dnsmasq-conf DNSMASQ_CONF|Xác định đường dẫn đầy đủ của file dnmasq.conf.|
+|-dK|--disable-karma|Vô hiệu hóa tấn công KARMA.|
+|-pE|--phishing-essid|Xác định ESSID bạn muốn sử dụng cho trang phishing.|
 
 
-## Screenshots
+## Ảnh chụp màn hình
 
-<p align="center"><img src="https://wifiphisher.github.io/wifiphisher/ss5.png" /><br /><i>Targeting an access point</i></p>
-<p align="center"><img src="https://wifiphisher.github.io/wifiphisher/ss2.png" /><br /><i>A successful attack</i></p>
-<p align="center"><img src="https://wifiphisher.github.io/wifiphisher/ss7.png" /><br /><i>Fake <a href="https://wifiphisher.org/ps/firmware-upgrade/">router configuration page</a></i></p>
-<p align="center"><img src="https://wifiphisher.github.io/wifiphisher/ss6.png" /><br /><i>Fake <a href="https://wifiphisher.org/ps/oauth-login/">OAuth Login Page</a></i></p>
-<p align="center"><img src="https://wifiphisher.github.io/wifiphisher/ss4.png" /><br /><i>Fake <a href="https://wifiphisher.org/ps/wifi_connect/">web-based network manager</a></i></p>
+<p align="center"><img src="https://wifiphisher.github.io/wifiphisher/ss5.png" /><br /><i>Nhắm mục tiêu vào một access point</i></p>
+<p align="center"><img src="https://wifiphisher.github.io/wifiphisher/ss2.png" /><br /><i>Một cuộc tấn công thành công</i></p>
+<p align="center"><img src="https://wifiphisher.github.io/wifiphisher/ss7.png" /><br /><i>Giả mạo <a href="https://wifiphisher.org/ps/firmware-upgrade/">trang cấu hình router</a></i></p>
+<p align="center"><img src="https://wifiphisher.github.io/wifiphisher/ss6.png" /><br /><i>Giả mạo <a href="https://wifiphisher.org/ps/oauth-login/">trang OAuth Login</a></i></p>
+<p align="center"><img src="https://wifiphisher.github.io/wifiphisher/ss4.png" /><br /><i>Giả mạo <a href="https://wifiphisher.org/ps/wifi_connect/">trình quản lý mạng dựa trên web</a></i></p>
 
 
-## Help needed
-If you are a Python developer or a web designer you can help us improve Wifiphisher. Feel free to take a look at the <a href="https://github.com/wifiphisher/wifiphisher/issues">bug tracker</a> for some tasks to do.
+## Cần hỗ trợ
+Nếu bạn là một nhà phát triển Python hoặc một nhà thiết kế web, bạn có thể giúp chúng tôi cải thiện Wifiphisher. Hãy thoải mái ghé qua <a href="https://github.com/wifiphisher/wifiphisher/issues">bug tracker</a> để xem một số công việc cần làm.
 
-If you don't know how to code, you can help us by <a href="https://github.com/wifiphisher/wifiphisher/issues">proposing improvements or reporting bugs</a>. Please have a look at the Bug Reporting Guidelines and the <a href="https://wifiphisher.readthedocs.io/en/latest/faq.html">FAQ document</a> beforehand.  Note that the tool does not aim to be script-kiddie friendly. Make sure you do understand how the tool works before opening an issue.
+Nếu bạn không biết cách viết code, bạn có thể giúp chúng tôi bằng cách <a href="https://github.com/wifiphisher/wifiphisher/issues">đề xuất cải tiến hoặc báo cáo lỗi</a>. Vui lòng xem qua Hướng dẫn Báo cáo Lỗi và <a href="https://wifiphisher.readthedocs.io/en/latest/faq.html">tài liệu FAQ</a> trước đó. Lưu ý rằng công cụ này không nhằm mục đích thân thiện với script-kiddie. Hãy chắc chắn rằng bạn hiểu cách công cụ hoạt động trước khi mở một issue.
 
-## Credits
-The script is based on an idea from <a
-href="https://github.com/DanMcInerney">Dan McInerney</a> back in 2015.
+## Ghi công
+Script này dựa trên một ý tưởng từ 
+href="https://github.com/DanMcInerney">Dan McInerney</a> vào năm 2015.
 
-A full list of contributors lies <a href="https://github.com/wifiphisher/wifiphisher/graphs/contributors">here</a>.
+Danh sách đầy đủ những người đóng góp nằm <a href="https://github.com/wifiphisher/wifiphisher/graphs/contributors">tại đây</a>.
 
-## License
-Wifiphisher is licensed under the GPLv3 license. See [LICENSE](LICENSE) for more information.
+## Giấy phép
+Wifiphisher được cấp phép theo giấy phép GPLv3. Xem [LICENSE](LICENSE) để biết thêm thông tin.
 
-## Project Status
-Wifiphisher's current version is **1.4**. You can download the latest release from <a href="https://github.com/wifiphisher/wifiphisher/releases/tag/v1.4">here</a>. Otherwise you can get the latest development version by cloning this repository.
+## Trạng thái dự án
+Phiên bản hiện tại của Wifiphisher là **1.4**. Bạn có thể tải xuống bản phát hành mới nhất từ <a href="https://github.com/wifiphisher/wifiphisher/releases/tag/v1.4">đây</a>. Ngoài ra, bạn có thể lấy phiên bản phát triển mới nhất bằng cách clone repository này.
 
-## Disclaimer
-* Usage of Wifiphisher for attacking infrastructures without prior mutual consistency can be considered as an illegal activity. It is the final user's responsibility to obey all applicable local, state and federal laws. Authors assume no liability and are not responsible for any misuse or damage caused by this program.
+## Tuyên bố miễn trừ trách nhiệm
+* Việc sử dụng Wifiphisher để tấn công các hạ tầng mà không có sự đồng thuận trước có thể được coi là một hành vi bất hợp pháp. Người dùng cuối phải chịu trách nhiệm tuân thủ tất cả các luật địa phương, tiểu bang và liên bang hiện hành. Các tác giả không chịu bất kỳ trách nhiệm pháp lý nào và không chịu trách nhiệm về bất kỳ hành vi lạm dụng hoặc thiệt hại nào gây ra bởi chương trình này.
 
-<b>Note</b>: Be aware of sites pretending to be related with the Wifiphisher Project. They may be delivering malware.
+<b>Lưu ý</b>: Hãy cẩn thận với các trang web giả mạo có liên quan đến Dự án Wifiphisher. Chúng có thể đang phát tán malware.
 
-For Wifiphisher news, follow us on <a href="https://www.twitter.com/wifiphisher">Twitter</a> or like us on <a href="https://www.facebook.com/Wifiphisher-129914317622032/">Facebook</a>.
+Để cập nhật tin tức về Wifiphisher, hãy theo dõi chúng tôi trên <a href="https://www.twitter.com/wifiphisher">Twitter</a> hoặc thích trang của chúng tôi trên <a href="https://www.facebook.com/Wifiphisher-129914317622032/">Facebook</a>.
